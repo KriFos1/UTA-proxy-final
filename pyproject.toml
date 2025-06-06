@@ -1,0 +1,15 @@
+[project]
+name = "udar_proxi"
+version = "1.0.0"
+authors = [
+  { name="Kristian Fossum", email="krfo@norceresearch.no" },
+]
+description = "A python package for the  proxy 1D EM model"
+readme = "README.md"
+requires-python = ">=3.8"
+dependencies = [
+  "numpy",
+  "scipy",
+  "torch",
+  "matplotlib"
+]

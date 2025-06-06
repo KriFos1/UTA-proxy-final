@@ -1,0 +1,10 @@
+pyproject.toml
+src/UTAEM.egg-info/PKG-INFO
+src/UTAEM.egg-info/SOURCES.txt
+src/UTAEM.egg-info/dependency_links.txt
+src/UTAEM.egg-info/requires.txt
+src/UTAEM.egg-info/top_level.txt
+src/udar_proxi/__init__.py
+src/udar_proxi/model_scaler.py
+src/udar_proxi/mymodel.py
+src/udar_proxi/oneDproxy.py

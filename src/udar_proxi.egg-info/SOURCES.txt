@@ -1,0 +1,10 @@
+pyproject.toml
+src/udar_proxi/__init__.py
+src/udar_proxi/model_scaler.py
+src/udar_proxi/mymodel.py
+src/udar_proxi/oneDproxy.py
+src/udar_proxi.egg-info/PKG-INFO
+src/udar_proxi.egg-info/SOURCES.txt
+src/udar_proxi.egg-info/dependency_links.txt
+src/udar_proxi.egg-info/requires.txt
+src/udar_proxi.egg-info/top_level.txt
