@@ -75,10 +75,17 @@ class MinMaxScaler:
 
 
     def _load_scalers(self, file_path=None):
-        self.min_x = torch.load(file_path + f"/min_x.pth", map_location=self.device)
-        self.max_x = torch.load(file_path + f"/max_x.pth", map_location=self.device)
-        self.min_y = torch.load(file_path + f"/min_y.pth", map_location=self.device)
-        self.max_y = torch.load(file_path + f"/max_y.pth", map_location=self.device)
+        if 'https://' in file_path:
+            # Load from URL. The file_path should be a URL template.
+            self.min_x = torch.hub.load_state_dict_from_url(file_path.format("min_x"), map_location=self.device)
+            self.max_x = torch.hub.load_state_dict_from_url(file_path.format("max_x"), map_location=self.device)
+            self.min_y = torch.hub.load_state_dict_from_url(file_path.format("min_y"), map_location=self.device)
+            self.max_y = torch.hub.load_state_dict_from_url(file_path.format("max_y"), map_location=self.device)
+        else:
+            self.min_x = torch.load(file_path + f"/min_x.pth", map_location=self.device)
+            self.max_x = torch.load(file_path + f"/max_x.pth", map_location=self.device)
+            self.min_y = torch.load(file_path + f"/min_y.pth", map_location=self.device)
+            self.max_y = torch.load(file_path + f"/max_y.pth", map_location=self.device)
 
     def save_scalers(self, file_path=None):
         torch.save(self.min_x, file_path + f"/min_x.pth")
